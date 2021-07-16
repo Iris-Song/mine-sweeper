@@ -1,4 +1,4 @@
-/* ¼ÆËã»ú 1954263 ËÎ×ÓÃú */
+
 #include"mine_sweeper.h"
 void draw_graph(const int model, const int map[][30]) 
 {
@@ -15,13 +15,13 @@ void draw_graph(const int model, const int map[][30])
 	cout << "  ";
 	int x, y;
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨X", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•”", COLOR_WHITE, COLOR_BLACK);
 	for (int i = 0; i < col-1; i++) {
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨T¨T¨j", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•â•â•¦", COLOR_WHITE, COLOR_BLACK);
 	}
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨T¨T¨[", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•â•â•—", COLOR_WHITE, COLOR_BLACK);
 	cout << endl;
 
 	char head = 'A';
@@ -30,18 +30,18 @@ void draw_graph(const int model, const int map[][30])
 		cout << "  ";
 		for (int j = 0; j < col; j++) {
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			cct_getxy(x, y);
 			cct_showch(x, y, ' ', COLOR_HCYAN, COLOR_HCYAN, 4);
 		}
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 		cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 		cout << endl;
 		cout << head << " ";
 		for (int j = 0; j < col; j++) {
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			cct_getxy(x, y);
 			cct_showch(x, y, ' ', COLOR_HCYAN, COLOR_HCYAN, 1);
 			cct_getxy(x, y);
@@ -58,20 +58,20 @@ void draw_graph(const int model, const int map[][30])
 			cct_showch(x, y, ' ', COLOR_HCYAN, COLOR_HCYAN, 2);
 		}
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 		cout << endl;
 		cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 		if (i != row - 1) {
 			cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 			cout << "  ";
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			for (int i = 0; i < col - 1; i++) {
 				cct_getxy(x, y);
-				cct_showstr(x, y, "¨T¨T¨p", COLOR_WHITE, COLOR_BLACK);
+				cct_showstr(x, y, "â•â•â•¬", COLOR_WHITE, COLOR_BLACK);
 			}
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨T¨T¨g", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•â•â•£", COLOR_WHITE, COLOR_BLACK);
 			cout << endl;
 		}
 
@@ -79,13 +79,13 @@ void draw_graph(const int model, const int map[][30])
 
 	cout << "  ";
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨^", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•š", COLOR_WHITE, COLOR_BLACK);
 	for (int i = 0; i < col - 1; i++) {
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨T¨T¨m", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•â•â•©", COLOR_WHITE, COLOR_BLACK);
 	}
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨T¨T¨a", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•â•â•", COLOR_WHITE, COLOR_BLACK);
 	cout << endl;
 	cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 }
@@ -104,13 +104,13 @@ void draw_hide_graph(const int model, const int map[][30], const int visited[][3
 	cout << "  ";
 	int x, y;
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨X", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•”", COLOR_WHITE, COLOR_BLACK);
 	for (int i = 0; i < col - 1; i++) {
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨T¨T¨j", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•â•â•¦", COLOR_WHITE, COLOR_BLACK);
 	}
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨T¨T¨[", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•â•â•—", COLOR_WHITE, COLOR_BLACK);
 	cout << endl;
 
 	char head = 'A';
@@ -119,18 +119,18 @@ void draw_hide_graph(const int model, const int map[][30], const int visited[][3
 		cout << "  ";
 		for (int j = 0; j < col; j++) {
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			cct_getxy(x, y);
 			cct_showch(x, y, ' ', visited[i][j]+10, visited[i][j] + 10, 4);
 		}
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 		cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 		cout << endl;
 		cout << head << " ";
 		for (int j = 0; j < col; j++) {
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			cct_getxy(x, y);
 			cct_showch(x, y, ' ', visited[i][j] + 10, visited[i][j] + 10, 1);
 			cct_getxy(x, y);
@@ -155,32 +155,32 @@ void draw_hide_graph(const int model, const int map[][30], const int visited[][3
 			cct_showch(x, y, ' ', visited[i][j] + 10, visited[i][j] + 10, 2);
 		}
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 		cout << endl;
 		cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 		if (i != row - 1) {
 			cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 			cout << "  ";
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨U", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•‘", COLOR_WHITE, COLOR_BLACK);
 			for (int i = 0; i < col - 1; i++) {
 				cct_getxy(x, y);
-				cct_showstr(x, y, "¨T¨T¨p", COLOR_WHITE, COLOR_BLACK);
+				cct_showstr(x, y, "â•â•â•¬", COLOR_WHITE, COLOR_BLACK);
 			}
 			cct_getxy(x, y);
-			cct_showstr(x, y, "¨T¨T¨g", COLOR_WHITE, COLOR_BLACK);
+			cct_showstr(x, y, "â•â•â•£", COLOR_WHITE, COLOR_BLACK);
 			cout << endl;
 		}
 	}
 	cout << "  ";
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨^", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•š", COLOR_WHITE, COLOR_BLACK);
 	for (int i = 0; i < col - 1; i++) {
 		cct_getxy(x, y);
-		cct_showstr(x, y, "¨T¨T¨m", COLOR_WHITE, COLOR_BLACK);
+		cct_showstr(x, y, "â•â•â•©", COLOR_WHITE, COLOR_BLACK);
 	}
 	cct_getxy(x, y);
-	cct_showstr(x, y, "¨T¨T¨a", COLOR_WHITE, COLOR_BLACK);
+	cct_showstr(x, y, "â•â•â•", COLOR_WHITE, COLOR_BLACK);
 	cout << endl;
 	cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 }
@@ -225,12 +225,12 @@ void mouse_move(int model)
 
 	cct_enable_mouse();
 	while (loop) {
-		/* ¶ÁÊó±ê/¼üÅÌ£¬·µ»ØÖµÎªÏÂÊö²Ù×÷ÖĞµÄÄ³Ò»ÖÖ, µ±Ç°Êó±êÎ»ÖÃÔÚ<X,Y>´¦ */
+		/* è¯»é¼ æ ‡/é”®ç›˜ï¼Œè¿”å›å€¼ä¸ºä¸‹è¿°æ“ä½œä¸­çš„æŸä¸€ç§, å½“å‰é¼ æ ‡ä½ç½®åœ¨<X,Y>å¤„ */
 		int X, Y;
 		ret = cct_read_keyboard_and_mouse(X, Y, maction, keycode1, keycode2);
 		if (ret == CCT_MOUSE_EVENT) {
 			cct_gotoxy(x, y);
-			cout << "[µ±Ç°¹â±ê] :" ;
+			cout << "[å½“å‰å…‰æ ‡] :" ;
 			if (maction == MOUSE_LEFT_BUTTON_CLICK) {
 				loop = 0;
 				break;
@@ -239,10 +239,10 @@ void mouse_move(int model)
 			{
 				int tempy = Y - graph_beginy;
 				if (!judge_position(model, X, tempy)) {
-					cout << "Î»ÖÃ·Ç·¨                    ";
+					cout << "ä½ç½®éæ³•                    ";
 				}
 				else {
-					cout << trans_to_row (tempy)<<"ĞĞ"<<trans_to_col(X)<<"ÁĞ          ";
+					cout << trans_to_row (tempy)<<"è¡Œ"<<trans_to_col(X)<<"åˆ—          ";
 				}
 			}
 			
@@ -252,11 +252,11 @@ void mouse_move(int model)
 
 int graph_row_col_select(int& select_row, int& select_col, const int model)
 {
-	//ÍË³ö·µ»Ø0
-	//µã¿ª·µ»Ø1
-	//¿´Ê±¼ä·µ»Ø2
-	//³É¹¦±ê¼Ç»òÈ¡Ïû±ê¼Ç·µ»Ø3
-	//ÆäËûÇé¿öÔò¼ÌĞø
+	//é€€å‡ºè¿”å›0
+	//ç‚¹å¼€è¿”å›1
+	//çœ‹æ—¶é—´è¿”å›2
+	//æˆåŠŸæ ‡è®°æˆ–å–æ¶ˆæ ‡è®°è¿”å›3
+	//å…¶ä»–æƒ…å†µåˆ™ç»§ç»­
 	int x, y;
 	int ret, maction;
 	int keycode1, keycode2;
@@ -269,12 +269,12 @@ int graph_row_col_select(int& select_row, int& select_col, const int model)
 
 	cct_enable_mouse();
 	while (loop) {
-		/* ¶ÁÊó±ê/¼üÅÌ£¬·µ»ØÖµÎªÏÂÊö²Ù×÷ÖĞµÄÄ³Ò»ÖÖ, µ±Ç°Êó±êÎ»ÖÃÔÚ<X,Y>´¦ */
+		/* è¯»é¼ æ ‡/é”®ç›˜ï¼Œè¿”å›å€¼ä¸ºä¸‹è¿°æ“ä½œä¸­çš„æŸä¸€ç§, å½“å‰é¼ æ ‡ä½ç½®åœ¨<X,Y>å¤„ */
 		int X, Y;
 		ret = cct_read_keyboard_and_mouse(X, Y, maction, keycode1, keycode2);
 		if (ret == CCT_MOUSE_EVENT) {
 			cct_gotoxy(0, y);
-			cout << "[µ±Ç°¹â±ê] :";
+			cout << "[å½“å‰å…‰æ ‡] :";
 			if (maction == MOUSE_LEFT_BUTTON_CLICK) {
 				int tempy = Y - graph_beginy;
 				if (judge_position(model, X, tempy)) {
@@ -287,10 +287,10 @@ int graph_row_col_select(int& select_row, int& select_col, const int model)
 			{
 				int tempy = Y - graph_beginy;
 				if (!judge_position(model, X, tempy)) {
-					cout << "Î»ÖÃ·Ç·¨                    ";
+					cout << "ä½ç½®éæ³•                    ";
 				}
 				else {
-					cout << trans_to_row(tempy) << "ĞĞ" << trans_to_col(X) << "ÁĞ          ";
+					cout << trans_to_row(tempy) << "è¡Œ" << trans_to_col(X) << "åˆ—          ";
 				}
 			}
 			else if (maction == MOUSE_RIGHT_BUTTON_CLICK)
@@ -305,7 +305,7 @@ int graph_row_col_select(int& select_row, int& select_col, const int model)
 		}
 		if (ret == CCT_KEYBOARD_EVENT) {
 			if (keycode1 == 27) {
-				//ESC¼ü
+				//ESCé”®
 				return 0;
 			}
 			if (keycode1 == 32) {
@@ -388,9 +388,9 @@ void play_game_graph(const int model, const int order, int map[][30], int visite
 	cct_getxy(x, y);
 	cct_gotoxy(0, 0);
 	if (order == 8)
-		cout << "°´ESCÍË³ö";
+		cout << "æŒ‰ESCé€€å‡º";
 	else if (order == 9)
-		cout << "°´ESCÍË³ö,¿Õ¸ñÏÔÊ¾Ê±¼ä";
+		cout << "æŒ‰ESCé€€å‡º,ç©ºæ ¼æ˜¾ç¤ºæ—¶é—´";
 	cct_gotoxy(x, y);
 	while (1)
 	{
@@ -402,7 +402,7 @@ void play_game_graph(const int model, const int order, int map[][30], int visite
 		else if (result == 2) {
 			cct_gotoxy(0, 0);
 			display_time(tick, begin);
-			cout << "   °´ESCÍË³ö,¿Õ¸ñÏÔÊ¾Ê±¼ä";
+			cout << "   æŒ‰ESCé€€å‡º,ç©ºæ ¼æ˜¾ç¤ºæ—¶é—´";
 			cct_gotoxy(x, y);
 			continue;
 		}
@@ -431,12 +431,12 @@ void play_game_graph(const int model, const int order, int map[][30], int visite
 		int judge = judge_game(map, visited, model, select_row, select_col);
 		if (judge == 1) {
 			cct_gotoxy(0, y2);
-			cout << "¹§Ï²Ê¤Àû£¬ÓÎÏ·½áÊø          " << endl;
+			cout << "æ­å–œèƒœåˆ©ï¼Œæ¸¸æˆç»“æŸ          " << endl;
 			break;
 		}
 		if (judge == 0) {
 			cct_gotoxy(0, y2);
-			cout << "ÄãÊäÁË£¬ÓÎÏ·½áÊø        " << endl;
+			cout << "ä½ è¾“äº†ï¼Œæ¸¸æˆç»“æŸ        " << endl;
 			break;
 		}
 	}
