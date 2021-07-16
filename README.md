@@ -14,10 +14,12 @@
 ### organization
 
 ```
-+-- src 　 　 　　(main code)
++-- src 　 　 　　      (main code)
 |  
-+-- mine sweeper (Evironment:visual studio 2019)
++-- mine_sweeper       (Evironment:visual studio 2019)
 |   
-+-- report.doc   (include request & design method)
++-- report.doc         (include request & design method)
+|   
++-- mine_sweeper.exe   (try it!)
 
 ```
