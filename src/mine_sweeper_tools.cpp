@@ -1,4 +1,4 @@
-/* ¼ÆËã»ú 1954263 ËÎ×ÓÃú */
+
 #include"mine_sweeper.h"
 int judge_row(const int model)
 {
@@ -34,14 +34,14 @@ int judge_boom_num(const int model)
     return 0;
 }
 
-void model_select(int& model)//Ñ¡ÔñÄÑ¶È
+void model_select(int& model)//é€‰æ‹©éš¾åº¦
 {
     cct_cls();
-    cout << "ÇëÑ¡ÔñÄÑ¶È£º" << endl;
-    cout << "1.³õ¼¶(9 * 9 - 10¿ÅÀ×)" << endl;
-    cout << "2.ÖĞ¼¶(16 * 16 - 40¿ÅÀ×)" << endl;
-    cout << "3.¸ß¼¶(16 * 30 - 99¿ÅÀ×)" << endl;
-    cout << "ÇëÊäÈë[1..3]£º" << endl;
+    cout << "è¯·é€‰æ‹©éš¾åº¦ï¼š" << endl;
+    cout << "1.åˆçº§(9 * 9 - 10é¢—é›·)" << endl;
+    cout << "2.ä¸­çº§(16 * 16 - 40é¢—é›·)" << endl;
+    cout << "3.é«˜çº§(16 * 30 - 99é¢—é›·)" << endl;
+    cout << "è¯·è¾“å…¥[1..3]ï¼š" << endl;
     while (1) {
         int x, y;
         cct_getxy(x, y);
@@ -59,7 +59,7 @@ void model_select(int& model)//Ñ¡ÔñÄÑ¶È
 }
 bool row_col_select(int& select_row, int& select_col, const int model)
 {
-    //µÃµ½µÄÊÇÏÂ±ê
+    //å¾—åˆ°çš„æ˜¯ä¸‹æ ‡
     int row_max = judge_row(model), col_max = judge_col(model);
     
     while (1) {
@@ -106,18 +106,18 @@ bool row_col_select(int& select_row, int& select_col, const int model)
 }
 int complex_select_base(int& select_row, int& select_col, const int model, int visited[][30])
 {
-    //ÍË³ö·µ»Ø0
-    //Õı³£ÊäÈëÎ»ÖÃ·µ»Ø1
-    //¿´Ê±¼ä·µ»Ø2
-    //±ê¼Ç·µ»Ø3
-    //È¡Ïû±ê¼Ç·µ»Ø4
+    //é€€å‡ºè¿”å›0
+    //æ­£å¸¸è¾“å…¥ä½ç½®è¿”å›1
+    //çœ‹æ—¶é—´è¿”å›2
+    //æ ‡è®°è¿”å›3
+    //å–æ¶ˆæ ‡è®°è¿”å›4
     int row_max = judge_row(model), col_max = judge_col(model);
     int bgrow, bgcol;
     cct_getxy(bgrow, bgcol);
-    cout << "ÌØÊâÊäÈëËµÃ÷£º& - ÓÎÏ·ÒÑÔËĞĞÊ±¼ä(µ¥×Ö·û¼´¿É£¬²»ĞèÒª¼Ó×ø±ê)" << endl;
-    cout << "              ! - ±ê¼Ç¸Ã×ø±êÎªÀ×(Àı£º!E3)" << endl;
-    cout << "              # - È¡Ïû±ê¼Ç      (Àı£º#E3)" << endl;
-    cout << "ÊäÈë·ÇÀ×Î»ÖÃµÄĞĞÁĞ×ø±ê£¨ÏÈĞĞºóÁĞ£¬ÑÏ¸ñÇø·Ö´óĞ¡Ğ´£¬Àı£ºG1 / Af£¬°´Q / qÍË³ö£©£º";
+    cout << "ç‰¹æ®Šè¾“å…¥è¯´æ˜ï¼š& - æ¸¸æˆå·²è¿è¡Œæ—¶é—´(å•å­—ç¬¦å³å¯ï¼Œä¸éœ€è¦åŠ åæ ‡)" << endl;
+    cout << "              ! - æ ‡è®°è¯¥åæ ‡ä¸ºé›·(ä¾‹ï¼š!E3)" << endl;
+    cout << "              # - å–æ¶ˆæ ‡è®°      (ä¾‹ï¼š#E3)" << endl;
+    cout << "è¾“å…¥éé›·ä½ç½®çš„è¡Œåˆ—åæ ‡ï¼ˆå…ˆè¡Œååˆ—ï¼Œä¸¥æ ¼åŒºåˆ†å¤§å°å†™ï¼Œä¾‹ï¼šG1 / Afï¼ŒæŒ‰Q / qé€€å‡ºï¼‰ï¼š";
     while (1) {
         int x, y;
         cct_getxy(x, y);
@@ -200,7 +200,7 @@ void count_boom(int map[][30], const int row, const int col)
         }
     }
 }
-void set_map(int map[][30], const int model, const int order,const int select_row,const int select_col) //numÎªÀ×µÄÊıÁ¿
+void set_map(int map[][30], const int model, const int order,const int select_row,const int select_col) //numä¸ºé›·çš„æ•°é‡
 {
     int row = judge_row(model);
     int col = judge_col(model);
@@ -225,9 +225,9 @@ bool init_model(int& model, int map[][30], int visited[][30],const int order, in
     model_select(model);
     cct_cls();
     if (order == 2||order==3|| order == 4) {
-        cout << "ÄÚ²¿Êı×é£º" << endl;
+        cout << "å†…éƒ¨æ•°ç»„ï¼š" << endl;
         display_hide_array(model,map,visited);
-        cout << "ÊäÈë·ÇÀ×Î»ÖÃµÄĞĞÁĞ×ø±ê£¨ÏÈĞĞºóÁĞ£¬ÑÏ¸ñÇø·Ö´óĞ¡Ğ´£¬Àı£ºG1 / Af£¬°´Q / qÍË³ö£©£º";
+        cout << "è¾“å…¥éé›·ä½ç½®çš„è¡Œåˆ—åæ ‡ï¼ˆå…ˆè¡Œååˆ—ï¼Œä¸¥æ ¼åŒºåˆ†å¤§å°å†™ï¼Œä¾‹ï¼šG1 / Afï¼ŒæŒ‰Q / qé€€å‡ºï¼‰ï¼š";
         if (!row_col_select(select_row, select_col, model))
             return false;
     }
@@ -237,7 +237,7 @@ bool init_model(int& model, int map[][30], int visited[][30],const int order, in
             int x, y;
             cct_getxy(x, y);
             cct_gotoxy(0, 0);
-            cout << "°´ESCÍË³ö";
+            cout << "æŒ‰ESCé€€å‡º";
             cct_gotoxy(x, y);
         }
         if (!graph_row_col_select(select_row, select_col, model))
@@ -249,7 +249,7 @@ bool init_model(int& model, int map[][30], int visited[][30],const int order, in
 
 char int_trans_char(const int n) 
 {
-    //½«ÕûĞÍ×ª»»Îª×Ö·û
+    //å°†æ•´å‹è½¬æ¢ä¸ºå­—ç¬¦
     if (n != BOOM)
         return char(n + '0');
     else
@@ -258,9 +258,9 @@ char int_trans_char(const int n)
 
 int judge_game(const int map[][30], const int visited[][30], const int model,const int select_row,const int select_col)
 {
-    //Èç¹û»ñÊ¤·µ»Ø1
-    //Èç¹ûÊ§°Ü·µ»Ø0
-    //ÓÎÏ·¼ÌĞø·µ»Ø2
+    //å¦‚æœè·èƒœè¿”å›1
+    //å¦‚æœå¤±è´¥è¿”å›0
+    //æ¸¸æˆç»§ç»­è¿”å›2
     if (map[select_row][select_col] == BOOM) 
     {
         return 0;
@@ -281,5 +281,5 @@ void display_time(LARGE_INTEGER tick, LARGE_INTEGER begin)
 {
     LARGE_INTEGER end;
     QueryPerformanceCounter(&end);
-    cout << setiosflags(ios::fixed) << setprecision(4) << double(end.QuadPart - begin.QuadPart) / tick.QuadPart << "Ãë" ;
+    cout << setiosflags(ios::fixed) << setprecision(4) << double(end.QuadPart - begin.QuadPart) / tick.QuadPart << "ç§’" ;
 }
