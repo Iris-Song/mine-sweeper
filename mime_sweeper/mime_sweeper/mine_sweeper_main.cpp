@@ -1,4 +1,4 @@
-/* ¼ÆËã»ú 1954263 ËÎ×ÓÃú */
+
 #include"mine_sweeper.h"
 
 int main() 
@@ -6,12 +6,12 @@ int main()
 	cct_setconsoleborder(120, 40, 120, 9000);
 	cct_setcolor(COLOR_BLACK, COLOR_WHITE);
 	cct_setcursor(CURSOR_VISIBLE_NORMAL);
-	cct_setfontsize("ĞÂËÎÌå", 24);
+	cct_setfontsize("æ–°å®‹ä½“", 24);
 
 	int order,model,select_row,select_col;
 	int map[16][30] = { 0 };
 	do {
-		int visited[16][30] = { 0 };//¸¨ÖúÊı×é£¬±ê¼ÇÊÇ·ñ±»±éÀú¹ı£¬±éÀú¹ıÎª1£¬±»±ê¼ÇÎªÀ×Îª2
+		int visited[16][30] = { 0 };//è¾…åŠ©æ•°ç»„ï¼Œæ ‡è®°æ˜¯å¦è¢«éå†è¿‡ï¼Œéå†è¿‡ä¸º1ï¼Œè¢«æ ‡è®°ä¸ºé›·ä¸º2
 		output_system(order);
 		if (order == 0)
 			break;
@@ -19,8 +19,8 @@ int main()
 			
 			LARGE_INTEGER tick, begin;
 
-			QueryPerformanceFrequency(&tick);	//»ñµÃ¼ÆÊıÆ÷ÆµÂÊ
-			QueryPerformanceCounter(&begin);	//»ñµÃ³õÊ¼Ó²¼ş¼ÆÊıÆ÷¼ÆÊı
+			QueryPerformanceFrequency(&tick);	//è·å¾—è®¡æ•°å™¨é¢‘ç‡
+			QueryPerformanceCounter(&begin);	//è·å¾—åˆå§‹ç¡¬ä»¶è®¡æ•°å™¨è®¡æ•°
 
 			if (order == 1) 
 				display_array(model, map);
