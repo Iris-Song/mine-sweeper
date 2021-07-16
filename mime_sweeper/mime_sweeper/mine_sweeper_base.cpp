@@ -1,11 +1,11 @@
-/* ¼ÆËã»ú 1954263 ËÎ×ÓÃú */
+
 #include"mine_sweeper.h"
 
 void display_array(const int model,const int map[][30])
 {
     int row=judge_row(model), col= judge_col(model);
        
-    cout << "ÄÚ²¿Êı×é£º" << endl;
+    cout << "å†…éƒ¨æ•°ç»„ï¼š" << endl;
     cout << "  |";
     for (int i = 0; i < col&&i<9; i++) {
         cout << i + 1 << " ";
@@ -83,7 +83,7 @@ void display_hide_array(const int model, const int map[][30], const int visited[
 //{
 //    int row = judge_row(model), col = judge_col(model);
 //
-//    cout << "ÄÚ²¿Êı×é£º" << endl;
+//    cout << "å†…éƒ¨æ•°ç»„ï¼š" << endl;
 //    cout << "  |";
 //    for (int i = 0; i < col && i < 9; i++) {
 //        cout << i + 1 << " ";
@@ -146,7 +146,7 @@ void display_unhide(const int model, const int select_row, const int select_col,
     cout << endl;
     int x, y;
     cct_getxy(x, y);
-    cout << "µ±Ç°Êı×é£º" << endl;
+    cout << "å½“å‰æ•°ç»„ï¼š" << endl;
     display_hide_array(model,map,visited);
     int x1, y1;
     cct_getxy(x1, y1);
@@ -164,7 +164,7 @@ void play_game_base(const int model,const int order,int map[][30], int visited[]
     while (1)
     {
         if (order == 3) {
-            cout << "ÊäÈë·ÇÀ×Î»ÖÃµÄĞĞÁĞ×ø±ê£¨ÏÈĞĞºóÁĞ£¬ÑÏ¸ñÇø·Ö´óĞ¡Ğ´£¬Àı£ºG1 / Af£¬°´Q / qÍË³ö£©£º";
+            cout << "è¾“å…¥éé›·ä½ç½®çš„è¡Œåˆ—åæ ‡ï¼ˆå…ˆè¡Œååˆ—ï¼Œä¸¥æ ¼åŒºåˆ†å¤§å°å†™ï¼Œä¾‹ï¼šG1 / Afï¼ŒæŒ‰Q / qé€€å‡ºï¼‰ï¼š";
             if(!row_col_select(select_row, select_col, model))
                 break;
             visited[select_row][select_col] = 1;
@@ -185,14 +185,14 @@ void play_game_base(const int model,const int order,int map[][30], int visited[]
             else if (result == 3) {
                 if (visited[select_row][select_col] == 0) 
                     visited[select_row][select_col] = 2;
-                cout << "µ±Ç°Êı×é£º" << endl;
+                cout << "å½“å‰æ•°ç»„ï¼š" << endl;
                 display_hide_array(model, map, visited);
                 continue;
             }
             else {
                 if (visited[select_row][select_col] == 2)
                 visited[select_row][select_col] = 0;
-                cout << "µ±Ç°Êı×é£º" << endl;
+                cout << "å½“å‰æ•°ç»„ï¼š" << endl;
                 display_hide_array(model, map, visited);
                 continue;
             }
@@ -200,11 +200,11 @@ void play_game_base(const int model,const int order,int map[][30], int visited[]
         display_unhide(model, select_row, select_col, map,visited);
         int judge = judge_game(map, visited, model, select_row, select_col);
         if (judge == 1) {
-            cout << "¹§Ï²Ê¤Àû£¬ÓÎÏ·½áÊø" << endl;
+            cout << "æ­å–œèƒœåˆ©ï¼Œæ¸¸æˆç»“æŸ" << endl;
             break;
         }
         if (judge == 0) {
-            cout << "ÄãÊäÁË£¬ÓÎÏ·½áÊø" << endl;
+            cout << "ä½ è¾“äº†ï¼Œæ¸¸æˆç»“æŸ" << endl;
             break;
         }
     }
